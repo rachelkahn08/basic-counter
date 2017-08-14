@@ -14,14 +14,31 @@ class Counter extends Component {
 			value: 0
 		}
 
-		if (this.props.title) {
+		if (props.title) {
 			this.setState({ title: this.props.title });
 		}
 
-		if (this.props.value) {
-			this.setState({ value: this.props.value });
+		if (props.value) {
+			this.setState({ value: this.props.value })
 		}
 		
+	}
+
+	componentWillReceiveProps(newProps) {
+		let newTitle = newProps.title;
+		let newValue = parseInt(newProps.value, 10);
+
+		if (!newTitle) {
+			this.setState({ title: this.state.title });
+		} else {
+			this.setState({ title: newTitle });
+		}
+
+		if (!newValue) {
+			this.setState({ value: 0 });
+		} else {
+			this.setState({ value: newValue })
+		}
 	}
 
 	increment() {
