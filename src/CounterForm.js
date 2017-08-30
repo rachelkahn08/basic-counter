@@ -32,7 +32,6 @@ class CounterForm extends Component {
 	changeValue(event) {
 		const newValue = event.target.value;	
 		this.setState({ value: newValue });
-		console.log(newValue);
 	}
 
 	submitCounter(event) {
@@ -41,7 +40,6 @@ class CounterForm extends Component {
 	}
 
 	postToApi(dataKey, saveData) {
-		console.log('fired');
 		let counterInfo = {
 		     type: "string",
 		     content: saveData
@@ -63,7 +61,6 @@ class CounterForm extends Component {
 	}
 
 	fetchApiData(dataType) {
-		console.log(counterID);
 		const dataID = counterID + '-' + dataType;
 
 		fetch("http://circuslabs.net:3000/data/" + dataID, {

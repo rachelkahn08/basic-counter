@@ -14,6 +14,11 @@ const CounterPage = (title) => (
 );
 
 class App extends Component {
+
+  updateCounter(newCount) {
+    
+  }
+
   render() {
     return (
 
